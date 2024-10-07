@@ -1,7 +1,9 @@
+// importing required packages and modules
 const inquirer = require("inquirer");
 const { Circle, Triangle, Square } = require("./lib/shapes");
 const fs = require("fs");
 
+// decalring questions prompts
 const questions = [
   {
     type: "input",
@@ -37,6 +39,7 @@ const generateSvg = (svgElement, logoText, logoColor) => {
 return newSvg;
 }
 
+// after prompting the questions,  genearting the logo file
 inquirer.prompt(questions).then((answers) => {
   let logoText = answers.logoText;
   let logoColor = answers.logoColor;
